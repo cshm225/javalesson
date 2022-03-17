@@ -1,0 +1,34 @@
+拡張子
+
+.txt	一般的なファイルテキスト
+//画像ファイル
+.jpg (jpeg)画像ファイル	
+.png 画像ファイル(透明を維持できる)
+.gif 軽い画像
+
+//音声ファイル
+.aiff
+.wav
+.mp3
+.ogg
+
+//動画ファイル
+.mp4
+.avi
+.mkv
+
+//プログラム
+.java
+.php
+.py
+.js
+.html
+.css
+.cs
+
+//
+.pdf (Portable Document Format)
+.xls エクセル
+.doc
+.psd
+.ai
