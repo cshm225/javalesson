@@ -13,8 +13,8 @@ public class Kimura{
 			}else{
 				System.out.println("今の持ち点は"+sum);
 				if(i!=2){
-				System.out.println("続けますか？");
-				restart=new Scanner(System.in).nextLine();
+					System.out.println("続けますか？");
+					restart=new Scanner(System.in).nextLine();
 				}else if(restart.equals("やめる")){
 					i=2;
 				}
