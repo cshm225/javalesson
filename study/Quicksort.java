@@ -1,81 +1,34 @@
-import java.util.*;
-public class Quicksort{
-	public static void main(String[] args){
-		int i,x;
-		int[] sort=new int[10];
-		//System.out.print("要素を入力:");
-		//x=new Scanner(System.in).nextInt();
-		System.out.println("数字を10個入力");
-
-		for(i=0;i<10;i++){
-			sort[i]=new Scanner(System.in).nextInt();
-		}
-		for(i=0;i<10;i++){
-			System.out.print("sort["+i+"]="+sort[i]+"  ");
-		}
-		System.out.println(" ");
-		sort(sort,0,9);
-		System.out.println("昇順にソートしました。");
-		for(i=0;i<10;i++){
-			System.out.println("sort["+i+"]="+sort[i]);
-		}
-	}
-	public static void sort(int[] sort,int left,int right){
-		int ave,pl,pr;
-		if ( 1 >= sort.length ) return;
-		if ( left >= right ) {
+package quicksort.sort;
+public class QuickSort{
+	public static void quicksort(int[] sort,int left,int right){
+		int pl,pr,pivot;
+		if(left>=right){
 			return;
 		}
-		if((right-left)==1){
-			if(sort[left]>sort[right]){
-				swap(sort,left,right);
-			}
-			return;
-		}
+		pivot=sort[(left+right)/2];
 		pl=left;
-		//System.out.println(pl);
 		pr=right;
-		//System.out.println(pr);
-		ave=sort[left+right/2];
-		//System.out.println(pl);
-		while(true){
-			System.out.println(pl+"pl");
-			//System.out.println(pr+"pr");
-			while(ave>=sort[pl]){
+		while(pl<=pr){
+			while(sort[pl]<pivot){
 				pl++;
-				if(pl>=pr){
-					break;
-				}
 			}
-			while(ave<=sort[pr]){
-				System.out.println(ave+"ave");
-				System.out.println(pr+"pr");
+			while(sort[pr]>pivot){
 				pr--;
-				if(pl>=pr){
-					break;
-				}
 			}
-			if(pl>=pr){
-				break;
+			if(pl<=pr){
+				int tmp;
+				swap(sort,pl,pr);
+				pl++;
+				pr--;
 			}
-			
-			swap(sort,pl,pr);
 		}
-		if(pl==pr){
-			pl++;
-		}
-//		sort(sort,left,pl);
-	//	sort(sort,pr,right);
-
+		quicksort(sort,left,pr);
+		quicksort(sort,pl,right);
 	}
 	public static void swap(int[] sort,int left,int right){
 		int tmp;
 		tmp=sort[left];
 		sort[left]=sort[right];
 		sort[right]=tmp;
-		for(int i=0;i<10;i++){
-			System.out.print("sort["+i+"]="+sort[i]+"  ");
-		}
-		System.out.println(" \n");
 	}
 }
