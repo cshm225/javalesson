@@ -2,7 +2,9 @@ import java.util.*;
 public class Yusha{
 	String name="輝";
 	int hp;
+	Sword sword;
 	public void attack(){
+		System.out.printf("%sは%sで攻撃した",this.name,this.sword.name);
 	}
 	public void sleep(){
 		this.hp=100;
@@ -23,5 +25,12 @@ public class Yusha{
 	public void run(){
 		
 		System.out.printf(this.name+"は逃げ出した\ngameover\n最終hpは%dでした",this.hp);
+	}
+	public Yusha(String name){
+		this.hp=100;
+		this.name=name;
+	}
+	public Yusha(){
+		this("ダミー");
 	}
 }
