@@ -1,10 +1,8 @@
 import java.util.*;
 public class Jihanki{
-		int user_money[]=new int[1];
-		int sum=0;
-		int num;
 		int returnmoney=0;
-		int buymoney;
+		int buymoney;//商品の値段返還変数
+		int num;//商品番号
 		String data[][]={
 			{"水","100"},
 			{"コーラ","120"},
@@ -16,25 +14,26 @@ public class Jihanki{
 		this.num=new Scanner(System.in).nextInt();
 	}
 
-	public void buy(int num){
-		System.out.printf("%s%n",this.data[num][1]);
-		buymoney=Integer.parseInt(this.data[num][1]);
+	public int buy(){
+		int sum=0;
+		System.out.printf("%sの%s円です%n",this.data[this.num][0],this.data[this.num][1]);
+		this.buymoney=Integer.parseInt(this.data[this.num][1]);
 		do{
 			System.out.print("お金を入れてください");
-			this.user_money[0]=new Scanner(System.in).nextInt();
-			System.out.printf("投入金額%d円\n",this.user_money[0]);
-			sum+=this.user_money[0];
-			if(sum>=buymoney){
+			int user_money=new Scanner(System.in).nextInt();
+			System.out.printf("投入金額%d円\n",user_money);
+			sum+=user_money;
+			if(sum>=this.buymoney){
 				break;
 			}
 			System.out.printf("お金が足りていません\n");
 		}while(buymoney>=sum);
-		dataPrint(this.data[num][0],buymoney);
+		return sum;
 	}
 
-	public int dataPrint(String data,int buymoney){
-		this.returnmoney=this.sum-buymoney;
-		System.out.printf("商品の%sとおつりの%d円返却です%n",data,this.returnmoney);
+	public int dataPrint(int sum){
+		this.returnmoney=sum-this.buymoney;
+		System.out.printf("商品の%sとおつりの%d円返却です%n",data[this.num][0],this.returnmoney);
 		return this.returnmoney;
 	}
 }
