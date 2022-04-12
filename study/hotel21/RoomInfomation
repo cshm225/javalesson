@@ -1,4 +1,4 @@
-public class RoomInfomation{
+public class RoomInformation{
 	int room[][]={
 		{201,202,203,205},
 		{301,302,303,305},
