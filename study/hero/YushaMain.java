@@ -30,12 +30,13 @@ public class YushaMain{
 		take.hp=120;
 		take.heal(h);
 		take.heal(h3);
-		take.heal(h3);*/
+		take.heal(h3);
 
 		Yusha h=new Yusha("ヒカル");
 		System.out.printf("%s %d%n",h.name,h.hp);
 		Yusha h2=new Yusha();
-		System.out.printf("%s %d%n",h2.name,h2.hp);
+		System.out.printf("%s %d%n",h2.name,h2.hp);*/
+		SuperYusha sh=new SuperYusha();
 	}
 }
 

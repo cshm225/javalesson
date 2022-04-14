@@ -31,6 +31,6 @@ public class Yusha{
 		this.name=name;
 	}
 	public Yusha(){
-		this("ダミー");
+		System.out.println("Yushaのコンストラクタが動作");
 	}
 }
